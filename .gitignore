@@ -1,0 +1,21 @@
+# general ignores
+/env
+
+# ui ignores
+/ui/node_modules
+/ui/.pnp
+/ui.pnp.js
+
+/ui/coverage
+
+/ui/build
+
+/ui.DS_Store
+/ui.env.local
+/ui.env.development.local
+/ui.env.test.local
+/ui.env.production.local
+
+/uinpm-debug.log*
+/uiyarn-debug.log*
+/uiyarn-error.log*
