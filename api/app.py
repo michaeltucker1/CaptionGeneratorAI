@@ -16,9 +16,15 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 def generate_captions(file):
-    model = whisper.load_model("base")
+    model_path = "model_cache/base.pt"
+    if not os.path.exists(model_path):
+        whisper.download_model("base", model_path)
+    model = whisper.load_model(model_path)
     result = model.transcribe(file)
     return result
+    # model = whisper.load_model("base")
+    # result = model.transcribe(file)
+    # return result
 
 @app.route('/api/v1/generate', methods=['POST'])
 def generate():
