@@ -1,27 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "ui/package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "build"
-        }
-      },
-      {
-        "src": "api/**/*.py",
-        "use": "@vercel/python"
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "api/$1.py"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "ui/$1"
-      }
-    ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
-  
