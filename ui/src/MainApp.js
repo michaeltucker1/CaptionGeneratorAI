@@ -32,8 +32,9 @@ function MainApp() {
     formData.append("file", selectedFile);
 
     setUploadStatus("Uploading...");
-
-    fetch("http://127.0.0.1:5000/api/v1/generate", {
+    // https://caption-generator-ai-iimo.vercel.app/api/v1/generate
+    //http://127.0.0.1:5000/api/v1/generate
+    fetch("https://caption-generator-ai-api.vercel.app/api/v1/generate", {
       method: "POST",
       body: formData,
     })

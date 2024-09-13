@@ -2,14 +2,16 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import subprocess
 import sys
-
-def install_dependencies():
-    subprocess.check_call([sys.executable, "install_dependencies.py"])
-
-install_dependencies()
-
 import whisper
 import os
+
+# def install_dependencies():
+#     subprocess.check_call([sys.executable, "install_dependencies.py"])
+
+# install_dependencies()
+
+
+# import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
