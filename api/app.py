@@ -32,6 +32,7 @@ def generate_captions(file):
 
 @app.route('/api/v1/generate', methods=['POST'])
 def generate():
+    print("MADE A REQUEST")
     # Check if the request contains a file
     if 'file' not in request.files:
         return jsonify({"message": "No file"}), 400
