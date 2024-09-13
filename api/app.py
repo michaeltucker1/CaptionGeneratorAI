@@ -30,6 +30,11 @@ def generate_captions(file):
     result = model.transcribe(file)
     return result
 
+@app.route('/api/v1/test', methods=['GET'])
+def test():
+    return "Backend is working!"
+
+
 @app.route('/api/v1/generate', methods=['POST'])
 def generate():
     print("MADE A REQUEST")
