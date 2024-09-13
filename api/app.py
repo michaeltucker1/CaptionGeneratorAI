@@ -1,5 +1,13 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+import subprocess
+import sys
+
+def install_dependencies():
+    subprocess.check_call([sys.executable, "install_dependencies.py"])
+
+install_dependencies()
+
 import whisper
 import os
 
@@ -16,15 +24,9 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 def generate_captions(file):
-    model_path = "model_cache/base.pt"
-    if not os.path.exists(model_path):
-        whisper.download_model("base", model_path)
-    model = whisper.load_model(model_path)
+    model = whisper.load_model("base")
     result = model.transcribe(file)
     return result
-    # model = whisper.load_model("base")
-    # result = model.transcribe(file)
-    # return result
 
 @app.route('/api/v1/generate', methods=['POST'])
 def generate():
