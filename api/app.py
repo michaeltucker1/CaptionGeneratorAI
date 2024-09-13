@@ -5,10 +5,10 @@ import sys
 import os
 import whisper
 
-# def install_dependencies():
-#     subprocess.check_call([sys.executable, "install_dependencies.py"])
+def install_dependencies():
+    subprocess.check_call([sys.executable, "install_dependencies.py"])
 
-# install_dependencies()
+install_dependencies()
 
 
 app = Flask(__name__)
