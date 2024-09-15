@@ -19,3 +19,4 @@
 /uinpm-debug.log*
 /uiyarn-debug.log*
 /uiyarn-error.log*
+.vercel
