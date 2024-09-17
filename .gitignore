@@ -19,4 +19,8 @@
 /uinpm-debug.log*
 /uiyarn-debug.log*
 /uiyarn-error.log*
-.vercel
+
+/api/__pycache__
+/api.DS_Store
+
+
