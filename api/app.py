@@ -3,13 +3,12 @@ from flask_cors import CORS
 import subprocess
 import sys
 import os
-
-def install_dependencies():
-    subprocess.check_call([sys.executable, "install_dependencies.py"])
-
-install_dependencies()
-
 import whisper
+
+# def install_dependencies():
+#     subprocess.check_call([sys.executable, "install_dependencies.py"])
+
+# install_dependencies()
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
